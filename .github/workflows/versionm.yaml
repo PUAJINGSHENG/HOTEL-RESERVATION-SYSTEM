@@ -1,0 +1,30 @@
+# .github/workflows/module1.yml
+name: Version Module 1
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/module1.yml
+      - module1/**
+  push:
+    paths:
+      - .github/workflows/module1.yml
+      - module1/**
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          ref: main  # checkout the correct branch name
+          fetch-depth: 0                # fetch the whole repo history
+
+      - name: Git Version
+        uses: codacy/git-version@2.5.4
+        with:
+          prefix: module1-
+          log-path: module1/
