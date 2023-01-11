@@ -1,7 +1,7 @@
 - name: Git Version
   uses: codacy/git-version@2.4.0
 
-# .github/workflows/version.yml
+
 name: Git Version
 
 on:
