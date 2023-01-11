@@ -1,6 +1,0 @@
-assembly-versioning-scheme: MajorMinorPatch
-branches:
-  main:
-    label: beta
-  support:
-    label: beta
