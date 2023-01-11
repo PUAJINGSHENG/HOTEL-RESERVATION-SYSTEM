@@ -1,25 +1,28 @@
-name: Build and deploy
+# .github/workflows/version.yml
+name: Git Version
+
 on:
   push:
+    branches:
+      - master
 
 jobs:
-  Tag-and-release:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-      - name: Fetch tags
-        shell: bash
-        run: git fetch --tags -f
-      - name: Autotag
-        uses: DanySK/semver-autotag-action@master
-      - name: Deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}   # checkout the correct branch name
+          fetch-depth: 0                # fetch the whole repo history
+
+      - name: Git Version
+        id: version
+        uses: codacy/git-version@2.7.1
+      
+      - name: Use the version
         run: |
-          TAG=$(git describe --tags --exact-match HEAD)
-          hub release create -m "$(git tag -l --format='%(contents)' "$TAG")" "$TAG" || true
-          hub release edit -m '' -a a_file "$TAG"
+          echo ${{ steps.version.outputs.version }}
+      - name: Use the previous version
+        run: |
+          echo ${{ steps.version.outputs.previous-version }}
