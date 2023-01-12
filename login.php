@@ -13,6 +13,7 @@
          
     } else {   
         $guest = new Guest();
+         $guest = new Guest();
         $res = $guest::guest_login($email,$h_upass);
 
         if ($res==true){
