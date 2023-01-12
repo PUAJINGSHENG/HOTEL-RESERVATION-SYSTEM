@@ -17,23 +17,24 @@ RUN pip install "pip==$PYTHON_PIP_VERSION" "poetry==$POETRY_VERSION"
 
 # Copy only poetry-specific files to collect the dependencies.
 WORKDIR /app
-COPY poetry.lock pyproject.toml /app/
+COPY poetry.lock pyproject.toml /HOTEL-RESERVATION-SYSTEM/
+
 
 # Install dependencies
 RUN poetry install --no-dev --no-interaction --no-ansi --no-root
 
 # Non-root user for running the application
 RUN groupadd -g 1000 app && \
-    useradd -r -u 1000 -g app app
+    useradd -r -u 1000 -g HOTEL-RESERVATION-SYSTEM HOTEL-RESERVATION-SYSTEM
 
 
 # Custom home for easier interactions inside container
-ENV HOME "/app"
+ENV HOME "/HOTEL-RESERVATION-SYSTEM/"
 
 # Copy the app code to the place expected by the runner
 # and make app user own everything in the directory.
-COPY ./app /app/app/
-RUN chown -R app:app /app/
+COPY ./HOTEL-RESERVATION-SYSTEM /HOTEL-RESERVATION-SYSTEM/HOTEL-RESERVATION-SYSTEM/
+RUN chown -R HOTEL-RESERVATION-SYSTEM:HOTEL-RESERVATION-SYSTEM /HOTEL-RESERVATION-SYSTEM/
 
 # Switch user
 USER 1000
