@@ -6,7 +6,7 @@ on:
 
 env:
   DOCKER_USERNAME: jspua
-  REPO: thedoorknobster/sample-app
+  REPO: jspua/hotel
 
 jobs:
   docker:
