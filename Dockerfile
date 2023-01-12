@@ -33,7 +33,7 @@ ENV HOME "/app/"
 
 # Copy the app code to the place expected by the runner
 # and make app user own everything in the directory.
-COPY ./HOTEL-RESERVATION-SYSTEM/HOTEL-RESERVATION-SYSTEM/HOTEL-RESERVATION-SYSTEM/
+COPY ./app/app/app/
 RUN chown -R app:app /app/
 
 # Switch user
