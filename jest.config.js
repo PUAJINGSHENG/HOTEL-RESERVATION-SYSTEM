@@ -1,9 +1,9 @@
 module.exports = {
     clearMocks: true,
-    moduleFileExtensions: ['js', 'ts'],
-    testMatch: ['**/*.test.ts'],
+    moduleFileExtensions: ['php', 'file'],
+    testMatch: ['**/*.php'],
     transform: {
-      '^.+\\.ts$': 'ts-jest'
+      '^.+\\.php$': 'file-php'
     },
     verbose: true,
     modulePaths: [
