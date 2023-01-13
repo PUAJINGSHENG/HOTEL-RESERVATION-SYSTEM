@@ -45,7 +45,7 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
+          GITHUB_TOKEN: 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
         with:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
