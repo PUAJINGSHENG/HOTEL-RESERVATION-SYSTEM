@@ -11,11 +11,11 @@ $result = $rm->single_accomodation($_SESSION['id']);
 		<table class="table table-hover">
 			<caption><h3 align="left">Accomodation Details</h3></caption>
 
-		<th width="30">Name </th>
+		<td width="30"><strong>Name </strong></td>
 		<td><?php echo ': '.$result->ACCOMODATION; ?></td>
 		</tr>
 		<tr>
-		<th width="30">Descrption </th>
+		<td width="30"><strong>Descrption </strong></td>
 		<td><?php echo ': '.$result->ACCOMDESC; ?></td>
 		</tr>
 		<tr>
