@@ -35,7 +35,7 @@
 
 	function message($msg="", $msgtype="") {
 	  if(!empty($msg)) {
-			$messgge="";
+			$message="";
 			// then this is "set message"
 	    // make sure you understand why $this->message=$msg wouldn't work
 	    $_SESSION['message'] = $msg;
