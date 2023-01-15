@@ -11,18 +11,18 @@ $result = $rm->single_accomodation($_SESSION['id']);
 		<table class="table table-hover">
 			<caption><h3 align="left">Accomodation Details</h3></caption>
 
-		<td width="30"><strong>Name </strong></td>
+		<th width="30">Name </th>
 		<td><?php echo ': '.$result->ACCOMODATION; ?></td>
 		</tr>
 		<tr>
-		<td width="30"><strong>Descrption </strong></td>
+		<th width="30">Descrption</th>
 		<td><?php echo ': '.$result->ACCOMDESC; ?></td>
 		</tr>
 		<tr>
 		<td> <input type="button" value="&laquo Back" class="btn btn-primary" onclick="window.location.href='index.php'" ></td>
 		</tr>
 		</table>
-	
+
 	 </div><!--End of Panel Body-->
- </div><!--End of Main Panel-->  
+ </div><!--End of Main Panel-->
 <?php unset($_SESSION['id']) ?>
