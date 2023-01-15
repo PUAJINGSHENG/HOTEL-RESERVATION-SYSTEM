@@ -42,14 +42,14 @@
 <thead>
 <tr><td colspan="9" align="center"><h1 class="page-header">Monbela Tourist Inn</h1></td></tr>
 <tr bgcolor="#999999">
-<td ><strong>Guest<strong></td>
-<td ><strong>Arrival<strong></td>
-<td ><strong>Departure<strong></td>
-<td ><strong>Room<strong></td>
-<td ><strong>Price<strong></td>
-<td ><strong>Nights<strong></td>
-<td ><strong>Subtotal<strong></td>
-<td ><strong>Status<strong></td>
+<th >Guest</th>
+<th >Arrival</th>
+<th >Departure</th>
+<th >Room</th>
+<th >Price</th>
+<th >Nights</th>
+<th >Subtotal</th>
+<th >Status</th>
 </tr>
 </thead>
 <tbody>
