@@ -1,23 +1,24 @@
 <!DOCTYPE html>
+<html lang="en">
 <?php require_once("../includes/initialize.php"); ?>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
- <link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>style.css">  
-<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>css/responsive.css">    
+ <link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>css/responsive.css">
 
-<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>css/bootstrap.css">  
+<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>css/bootstrap.css">
 
-<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>fonts/css/font-awesome.min.css"> 
+<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>fonts/css/font-awesome.min.css">
 
 
 <!-- DataTables CSS -->
 <!-- <link href="<?php echo WEB_ROOT; ?>css/dataTables.bootstrap.css" rel="stylesheet"> -->
- 
+
  <link href="<?php echo WEB_ROOT; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
  <link href="<?php echo WEB_ROOT; ?>css/datepicker.css" rel="stylesheet" media="screen">
 
@@ -44,7 +45,7 @@ if (isset($_POST['profileCheck'])) {
 $guest = new Guest();
 $result=$guest->single_guest($guestid);*/
 
-  $name = $_SESSION['name']; 
+  $name = $_SESSION['name'];
   $last = $_SESSION['last'];
   // $country =$_SESSION['country'];
   $city = $_SESSION['city'] ;
@@ -58,17 +59,17 @@ $result=$guest->single_guest($guestid);*/
 ?>
 
 
-<div id="accom-title"  > 
-    <div  class="pagetitle">   
+<div id="accom-title"  >
+    <div  class="pagetitle">
             <h1  >Reservation Details
-                 
-            </h1> 
-       </div> 
+
+            </h1>
+       </div>
   </div>
 
     <form action="index.php?view=payment" method="post"  name="" >
-         
-            
+
+
            <p>
             <? print(Date("l F d, Y")); ?>
             <br/><br/>
@@ -95,29 +96,29 @@ $result=$guest->single_guest($guestid);*/
               <th  width="120">Price</th>
                <th align="center" width="120">Room</th>
               <th align="center" width="90">Amount</th>
-           
-              
-         
-            </tr> 
+
+
+
+            </tr>
           </thead>
           <tbody>
-          
+
             <?php
 
 
 
 
-             $arival   = $_SESSION['from']; 
-              $departure = $_SESSION['to']; 
+             $arival   = $_SESSION['from'];
+              $departure = $_SESSION['to'];
               $days = dateDiff($arival,$departure);
               $count_cart = count($_SESSION['dragonhouse_cart']);
 
-                for ($i=0; $i < $count_cart  ; $i++) {    
+                for ($i=0; $i < $count_cart  ; $i++) {
               $mydb->setQuery("SELECT * FROM `tblroom` r, `tblaccomodation` a WHERE  r.`ACCOMID`=a.`ACCOMID` AND `ROOMID` =". $_SESSION['dragonhouse_cart'][$i]['dragonhouseroomid']);
               $cur = $mydb->loadResultList();
 
             foreach ($cur as $result) {
-              echo '<tr>'; 
+              echo '<tr>';
               // echo '<td></td>';
               echo '<td>'. $result->ROOM.' '. $result->ACCOMODATION.'</td>';
               echo '<td>'.$_SESSION['dragonhouse_cart'][$i]['dragonhousecheckin'].'</td>';
@@ -126,11 +127,11 @@ $result=$guest->single_guest($guestid);*/
               echo '<td> &euro;'. $result->PRICE.'</td>';
                echo '<td >1</td>';
                 echo '<td >&euro;'. $_SESSION['dragonhouse_cart'][$i]['dragonhouseroomprice'].'</td>';
-        
 
-              
+
+
               echo '</tr>';
-            } 
+            }
 
 
           }
@@ -143,15 +144,15 @@ $result=$guest->single_guest($guestid);*/
                    <td colspan="5"></td><td align="right"><h5><b>Order Total: </b></h5>
                    <td align="left">
                   <h5><b> <?php echo '&euro;' . $payable= $days*$result->PRICE; ?></b></h5>
-                                   
+
                   </td>
           </tr>
-      
-         
-          </tfoot>  
+
+
+          </tfoot>
         </table>
 
-    
+
 <p>We are eagerly anticipating your arrival and would like to advise you of the following in order to help you with your trip planning.Your reservation number is <b><?php echo $_SESSION['confirmation']?>:</b><br/><br/>Should there be a concern with your reservation, a customer service representative will contact you. Otherwise, consider your reservation confirmed.</p>
 <ul>
  <li>Function Room rate is &euro; 500.00 for first four hours and &euro; 100.00 for each succeeding hours.</li>
@@ -173,9 +174,9 @@ If you have any questions, please email at dragonhouse.com or call (034) 4713 â€
 Thank you for choosing dragon house
 <br/><br/>
 Respectfully your,<br/><br/>
-Dragon House 
+Dragon House
 
- 
+
 </form>
 </body>
 </html>
