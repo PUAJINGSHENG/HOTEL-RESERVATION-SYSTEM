@@ -192,12 +192,12 @@ $_SESSION['GUESTID'] =   $lastguest;
     <table class="table">
       <thead>
         <tr>
-          <td>Room</td>
-          <td>Arrival</td>
-          <td>Departure</td>
-          <td>Price</td>
-          <td>Night(s)</td>
-          <td>Subtotal</td>
+          <th>Room</th>
+          <th>Arrival</th>
+          <th>Departure</th>
+          <th>Price</th>
+          <th>Night(s)</th>
+          <th>Subtotal</th>
         </tr>
       </thead> 
       <tbody>
