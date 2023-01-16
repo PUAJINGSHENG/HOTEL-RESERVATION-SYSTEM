@@ -1,4 +1,4 @@
- 
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h4>
@@ -14,7 +14,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
- 
+
         <!-- /.col -->
         <div class="col-md-12">
           <div class="box box-primary">
@@ -55,6 +55,12 @@
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
+                    <tr>
+                      <th>Checkbox</th>
+                        <th>Name</th>
+                        <th>Issue and Solution</th>
+                        <th>Time</th>
+                    </tr>
                   <tr>
                     <td><input type="checkbox"></td>
                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
