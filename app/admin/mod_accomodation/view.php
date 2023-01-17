@@ -15,7 +15,7 @@ $result = $rm->single_accomodation($_SESSION['id']);
 		<td><?php echo ': '.$result->ACCOMODATION; ?></td>
 		</tr>
 		<tr>
-		<th width="30">Descrption</th>
+		<th width="30">Descrption</th><th>demo</th>
 		<td><?php echo ': '.$result->ACCOMDESC; ?></td>
 		</tr>
 		<tr>
